@@ -1,0 +1,10 @@
+/tool e-mail
+set address=smtp.gmail.com from=example@gmail.com password=youremailpassword port=587 start-tls=yes user=example@gmail.com
+/export file=([/system identity get name] . "-" . \
+[:pick [/system clock get date] 7 11] . [:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6]); :delay 10;\
+/tool e-mail send to="example@gmail.com" subject=([/system identity get name] . " Backup " . \
+[/system clock get date]) file=([/system identity get name] . "-" . [:pick [/system clock get date] 7 11] . \
+[:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6] . ".rsc"); :delay 15; \
+/file rem [/file find name=([/system identity get name] . "-" . [:pick [/system clock get date] 7 11] . \
+[:pick [/system clock get date] 0 3] . [:pick [/system clock get date] 4 6] . ".rsc")]; \
+:log info ("System Backup emailed at " . [/sys cl get time] . " " . [/sys cl get date])
