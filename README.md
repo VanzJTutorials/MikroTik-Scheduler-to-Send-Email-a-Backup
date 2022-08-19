@@ -8,7 +8,7 @@ This script will help you create automatically an rsc file and will be sent and 
 2) Create a sceduler and paste the script on the on-event field.
 
 Note:
-If you receive an email notification warning, please enable the less secure app.
+If you didn't receive an email notification warning, please enable the less secure app.
 https://myaccount.google.com/lesssecureapps
 
 For detailed guide watch the Video Guide.
